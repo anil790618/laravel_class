@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
     // $data = compact('name');
 
-    return view('layout/home');
-});
+    // return view('layout/home');
+// });
 // Route::get('/demo/{name}/{id?}',function($name,$id=null){
     // echo " Hello World";
     // return view('demo');
@@ -28,3 +31,12 @@ Route::get('/', function () {
     // print_r($data);
     // return view('demo')->with($data);
 // });
+// php artisan make:controller basicController
+Route::get('/',[DemoController::class,'index']);
+Route::get('/about','App\Http\Controllers\DemoController@about');
+
+// php artisan make:controller <controller-name>  --invokable
+Route::get('/courses',SingleActionController::class);
+
+// php artisan make:controller <controller-name>  --resource
+Route::resource('/photo',PhotoController::class);

@@ -3,6 +3,6 @@
 <title>Home</title>    
 @endpush
 @section('main-section')
- <h2 class="text-danger">main section</h2>
+ <h2 class="text-danger">HOme  section</h2>
 
 @endsection
