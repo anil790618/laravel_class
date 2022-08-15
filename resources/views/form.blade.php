@@ -17,7 +17,17 @@
       <h3 class="text-center">Register form</h3>
       <form action="{{url('/')}}/register" method="POST">
         @csrf
-        <div class="mb-3">
+        @php
+            $demo = 1;
+        @endphp
+        <x-input type="text" name="name" label="Name" :demo="$demo"/>
+        <x-input type="email" name="email" label="Email"/>
+        <x-input type="password" name="password" label="Password"/>
+        <x-input type="password" name="confirm_password" label="Confirm Password"/>
+        {{-- <x-input type="email" name= "email" label = "email"/>
+        <x-input type="password" name="password" label = "password"/>
+        <x-input type="password" name="confirm_password" label = "Confirm Password"/> --}}
+        {{-- <div class="mb-3">
           <label for=" " class="form-label">Name</label>
           <input type="text" class="form-control" name="name" id=" "  > 
           <span class="text-danger"> 
@@ -25,8 +35,8 @@
             {{$message}}
             @enderror
           </span>
-        </div>
-        <div class="mb-3">
+        </div> --}}
+        {{-- <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
           <span class="text-danger"> 
@@ -34,8 +44,7 @@
             {{$message}}
             @enderror
           </span>
-          {{-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> --}}
-        </div>
+         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" name='password' id="exampleInputPassword1">
@@ -53,7 +62,7 @@
             {{$message}}
             @enderror
           </span>
-        </div>
+        </div> --}}
         
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
