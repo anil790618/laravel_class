@@ -51,8 +51,10 @@ Route::post('/register',[RegistrationController::class,'register']);
 Route::get('/customer',function(){
     $customers =  Customer::all();
     echo "<pre>";
-    print_r($customers->toArray());
+    print_r($customers);
+    // print_r($customers->toArray());
 });
 
 Route::get('/registeruser',[userRegistration::class,'index']);
 Route::post('/registeruser',[userRegistration::class,'store']);
+Route::get('/registeruser/registeruser_view',[userRegistration::class,'view']);

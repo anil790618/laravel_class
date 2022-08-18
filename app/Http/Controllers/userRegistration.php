@@ -24,5 +24,16 @@ class userRegistration extends Controller
         $customer->dob=$request['dob'];
         $customer->password=md5($request['password']);
         $customer->save();
+        return redirect("registeruser/registeruser_view");
+     }
+
+     public function view(){
+        $customer = Customer::all();
+        $data = compact('customer');
+        // echo "<pre>";
+        // print_r("$customer");
+        // print_r("$customer->toArray");
+        // return view("registeruser_view");
+        return view("registeruser_view")->with($data);
      }
 }
