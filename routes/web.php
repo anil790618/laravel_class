@@ -5,6 +5,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\userRegistration;
 use App\Models\Customer;
 
 /*
@@ -52,3 +53,6 @@ Route::get('/customer',function(){
     echo "<pre>";
     print_r($customers->toArray());
 });
+
+Route::get('/registeruser',[userRegistration::class,'index']);
+Route::post('/registeruser',[userRegistration::class,'store']);
