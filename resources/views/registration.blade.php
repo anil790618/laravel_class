@@ -7,7 +7,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-   
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{url('/')}}">Navbar</a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{url('/registeruser/registeruser_view')}}">Data View <span class="visually-hidden">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url('/registeruser')}}">Register</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                      <a class="dropdown-item" href="#">Action 1</a>
+                      <a class="dropdown-item" href="#">Action 2</a>
+                  </div>
+              </li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0">
+              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
     <div class="container my-5 p-5 bg-secondary">
         <div class="row">
             <div class="col-10 m-auto">

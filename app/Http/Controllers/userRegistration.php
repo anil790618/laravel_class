@@ -7,6 +7,11 @@ use App\Models\Customer;
 
 class userRegistration extends Controller
 {
+
+
+    public function home(){
+        return view('home');
+    }
     public function index(){
         return view('registration');
     }
@@ -36,4 +41,21 @@ class userRegistration extends Controller
         // return view("registeruser_view");
         return view("registeruser_view")->with($data);
      }
+
+     public function delete($id){
+            // echo $id;
+            // die;
+            // $customer = Customer::find($id)->delete();
+            $customer = Customer::find($id);
+
+            if(!is_null($customer)){
+                $customer->delete();
+            }
+            // return redirect()->back();
+            return redirect('/registeruser/registeruser_view');
+            // echo "<pre>";
+            // print_r($customer);
+     }
+
+
 }

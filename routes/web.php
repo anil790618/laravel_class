@@ -35,7 +35,7 @@ use App\Models\Customer;
     // return view('demo')->with($data);
 // });
 // php artisan make:controller basicController
-Route::get('/',[DemoController::class,'index']);
+// Route::get('/',[DemoController::class,'index']);
 Route::get('/about','App\Http\Controllers\DemoController@about');
 
 // php artisan make:controller <controller-name>  --invokable
@@ -54,7 +54,8 @@ Route::get('/customer',function(){
     print_r($customers);
     // print_r($customers->toArray());
 });
-
-Route::get('/registeruser',[userRegistration::class,'index']);
+Route::get('/',[userRegistration::class,'home']);
+Route::get('/registeruser',[userRegistration::class,'index'])->name('register.data');
+Route::get('/registeruser/delete/{id}',[userRegistration::class,'delete'])->name('customer.delete');
 Route::post('/registeruser',[userRegistration::class,'store']);
 Route::get('/registeruser/registeruser_view',[userRegistration::class,'view']);
