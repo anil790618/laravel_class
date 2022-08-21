@@ -13,7 +13,10 @@ class userRegistration extends Controller
         return view('home');
     }
     public function index(){
-        return view('registration');
+        $url = url('/registeruser');
+        $title= "Register User";
+        $data = compact('url','title');
+        return view('registration')->with($data);
     }
     public function store(Request $request){
         // echo "<pre>";
@@ -55,6 +58,36 @@ class userRegistration extends Controller
             return redirect('/registeruser/registeruser_view');
             // echo "<pre>";
             // print_r($customer);
+     }
+
+     public function edit($id){
+        $customer = customer::find($id);
+        if(is_null($customer)){
+            return redirect('/registeruser/registeruser_view');
+        }else{
+            $url = url('/registeruser/update')."/".$id;
+            $title = "Update User Details";
+            $data = compact('customer','url','title');
+            // echo"<pre>";
+            // print_r($data);
+            return view('registration')->with($data);
+        }
+     }
+
+
+     public function update($id, Request $request){
+        $customer = Customer::find($id);
+        $customer->name=$request['name'];
+        $customer->email=$request['email'];
+        $customer->gender=$request['gender'];
+        $customer->address=$request['address'];
+        $customer->country=$request['country'];
+        $customer->state=$request['state'];
+        $customer->dob=$request['dob'];
+        // $customer->password=md5($request['password']);
+        $customer->save();
+        return redirect('/registeruser/registeruser_view');
+
      }
 
 

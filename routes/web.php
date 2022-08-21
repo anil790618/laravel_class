@@ -57,5 +57,7 @@ Route::get('/customer',function(){
 Route::get('/',[userRegistration::class,'home']);
 Route::get('/registeruser',[userRegistration::class,'index'])->name('register.data');
 Route::get('/registeruser/delete/{id}',[userRegistration::class,'delete'])->name('customer.delete');
+Route::get('/registeruser/edit/{id}',[userRegistration::class,'edit'])->name('customer.edit');
+Route::post('/registeruser/update/{id}',[userRegistration::class,'update'])->name('customer.update');
 Route::post('/registeruser',[userRegistration::class,'store']);
 Route::get('/registeruser/registeruser_view',[userRegistration::class,'view']);

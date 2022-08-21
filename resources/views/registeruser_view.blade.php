@@ -75,6 +75,7 @@
                       <td>
                         {{-- <a href="{{url('/registeruser/delete/')}}/{{$customer->customer_id}}"> <button class="btn btn-danger">Delete</button></a> --}}
                         <a href="{{route('customer.delete',['id'=>$customer->customer_id])}}"> <button class="btn btn-danger">Delete</button></a>
+                        <a href="{{route('customer.edit',['id'=>$customer->customer_id])}}"> <button class="btn btn-primary">Edit</button></a>
                       </td>
 
                       

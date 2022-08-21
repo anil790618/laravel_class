@@ -36,16 +36,17 @@
     <div class="container my-5 p-5 bg-secondary">
         <div class="row">
             <div class="col-10 m-auto">
-                <h4 class="text-center">Registration Form</h4>
-                  <form class="row g-3" action="{{url('/')}}/registeruser" method="POST">
+                <h4 class="text-center">{{$title}}</h4>
+                  {{-- <form class="row g-3" action="{{url('/')}}/registeruser" method="POST"> --}}
+                  <form class="row g-3" action="{{$url}}" method="POST">
                    @csrf
                     <div class="col-md-6">
                         <label for="" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="">
+                        <input type="text" class="form-control" name="name" id="" value="{{$customer->name}}">
                       </div>
                     <div class="col-md-6">
                       <label for="inputEmail4" class="form-label">Email</label>
-                      <input type="email" class="form-control" name="email" id="inputEmail4">
+                      <input type="email" class="form-control" name="email" id="inputEmail4" value="{{$customer->email}}">
                     </div>
                     <div class="col-md-6">
                       <label for="inputPassword4" class="form-label">Password</label>
@@ -57,27 +58,27 @@
                     </div>
                     <div class="col-6">
                       <label for="inputAddress" class="form-label">country</label>
-                      <input type="text" class="form-control" id="" name="country" placeholder="1234 Main St">
+                      <input type="text" class="form-control" id="" name="country" placeholder="1234 Main St" value="{{$customer->country}}">
                     </div>
                     <div class="col-6">
                       <label for="inputAddress" class="form-label">state</label>
-                      <input type="text" class="form-control" id="inputAddress" name="state" placeholder="1234 Main St">
+                      <input type="text" class="form-control" id="inputAddress" name="state" placeholder="1234 Main St" value="{{$customer->state}}">
                     </div>
                     <div class="col-12">
                       <label for="inputAddress" class="form-label">Address</label>
-                      <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
+                      <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" value="{{$customer->address}}">
                     </div>
                   
                   <div class="col-6">
                     <label for="inputAddress" class="form-label">Gender</label><br>
-                    <input type="radio" name="gender" id="" value="M">Male
-                    <input type="radio" name="gender" id="" value="F">female
-                    <input type="radio" name="gender" id="" value="O">other
+                    <input type="radio" name="gender" id="" value="M" {{$customer->gender == "M"? "checked": ""}}>Male
+                    <input type="radio" name="gender" id="" value="F" {{$customer->gender == "F"? "checked": ""}}>female
+                    <input type="radio" name="gender" id="" value="O" {{$customer->gender == "O"? "checked": ""}}>other
 
                   </div>
                   <div class="col-6">
                     <label for="inputAddress" class="form-label">Dob</label>
-                    <input type="date" name="dob" id="" class="form-control">
+                    <input type="date" name="dob" id="" class="form-control" value="{{$customer->dob}}">
 
                   </div>
                    
