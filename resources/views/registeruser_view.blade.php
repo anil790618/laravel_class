@@ -43,7 +43,7 @@
    <div class="container my-5">
     <div class="row">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{route('register.data')}}">
+        <a href="{{route('register.form')}}">
         <button class="btn btn-primary my-2" type="button">+ Add</button></a> 
       </div>
       <div class="col-12 m-auto border">

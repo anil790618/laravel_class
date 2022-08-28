@@ -46,7 +46,7 @@ Route::resource('/photo',PhotoController::class);
 
 
 Route::get('/register',[RegistrationController::class,'index']);
-Route::post('/register',[RegistrationController::class,'register']);
+Route::post('/register',[RegistrationController::class,'register'])->name('register.form');
 
 Route::get('/customer',function(){
     $customers =  Customer::all();

@@ -43,30 +43,65 @@
                     <div class="col-md-6">
                         <label for="" class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" id="" value="{{$customer->name}}">
+                        <span class="text-danger"> 
+                          @error('name')
+                          {{$message}}
+                          @enderror
+                        </span>
                       </div>
                     <div class="col-md-6">
                       <label for="inputEmail4" class="form-label">Email</label>
                       <input type="email" class="form-control" name="email" id="inputEmail4" value="{{$customer->email}}">
+                      <span class="text-danger"> 
+                        @error('email')
+                        {{$message}}
+                        @enderror
+                      </span>
                     </div>
                     <div class="col-md-6">
                       <label for="inputPassword4" class="form-label">Password</label>
                       <input type="password" class="form-control" name="password" id="inputPassword4">
+                      <span class="text-danger"> 
+                        @error('password')
+                        {{$message}}
+                        @enderror
+                      </span>
                     </div>
                     <div class="col-md-6">
                       <label for="inputPassword4" class="form-label">Confirm Password</label>
                       <input type="password" class="form-control" name="confirm_password" id="inputPassword4">
+                      <span class="text-danger"> 
+                        @error('confirm_password')
+                        {{$message}}
+                        @enderror
+                      </span>
                     </div>
                     <div class="col-6">
                       <label for="inputAddress" class="form-label">country</label>
                       <input type="text" class="form-control" id="" name="country" placeholder="1234 Main St" value="{{$customer->country}}">
+                      <span class="text-danger"> 
+                        @error('country')
+                        {{$message}}
+                        @enderror
+                      </span>
                     </div>
                     <div class="col-6">
                       <label for="inputAddress" class="form-label">state</label>
                       <input type="text" class="form-control" id="inputAddress" name="state" placeholder="1234 Main St" value="{{$customer->state}}">
+                      <span class="text-danger"> 
+                        @error('state')
+                        {{$message}}
+                        @enderror
+                      </span>
                     </div>
                     <div class="col-12">
                       <label for="inputAddress" class="form-label">Address</label>
                       <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" value="{{$customer->address}}">
+                      <span class="text-danger"> 
+                        @error('address')
+                        {{$message}}
+                        @enderror
+                      </span>
                     </div>
                   
                   <div class="col-6">
@@ -74,12 +109,20 @@
                     <input type="radio" name="gender" id="" value="M" {{$customer->gender == "M"? "checked": ""}}>Male
                     <input type="radio" name="gender" id="" value="F" {{$customer->gender == "F"? "checked": ""}}>female
                     <input type="radio" name="gender" id="" value="O" {{$customer->gender == "O"? "checked": ""}}>other
-
+                    <span class="text-danger"> 
+                      @error('gender')
+                      {{$message}}
+                      @enderror
+                    </span>
                   </div>
                   <div class="col-6">
                     <label for="inputAddress" class="form-label">Dob</label>
                     <input type="date" name="dob" id="" class="form-control" value="{{$customer->dob}}">
-
+                    <span class="text-danger"> 
+                      @error('dob')
+                      {{$message}}
+                      @enderror
+                    </span>
                   </div>
                    
                     <div class="col-12">

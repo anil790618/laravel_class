@@ -12,7 +12,7 @@ class userRegistration extends Controller
     public function home(){
         return view('home');
     }
-    public function index(){
+    public function index(){ 
         $url = url('/registeruser');
         $title= "Register User";
         $data = compact('url','title');
@@ -21,6 +21,9 @@ class userRegistration extends Controller
     public function store(Request $request){
         // echo "<pre>";
         // print_r($request)->all();
+
+        // p($request->all());
+        // die;
 
         $customer = new Customer;
         $customer->name=$request['name'];

@@ -13,61 +13,66 @@
   <body>
 <div class="container mt-5 border p-5">
   <div class="row">
-    <div class="col-6 m-auto">
-      <h3 class="text-center">Register form</h3>
-      <form action="{{url('/')}}/register" method="POST">
-        @csrf
-        @php
-            $demo = 1;
-        @endphp
-        <x-input type="text" name="name" label="Name" :demo="$demo"/>
-        <x-input type="email" name="email" label="Email"/>
-        <x-input type="password" name="password" label="Password"/>
-        <x-input type="password" name="confirm_password" label="Confirm Password"/>
-        {{-- <x-input type="email" name= "email" label = "email"/>
-        <x-input type="password" name="password" label = "password"/>
-        <x-input type="password" name="confirm_password" label = "Confirm Password"/> --}}
-        {{-- <div class="mb-3">
-          <label for=" " class="form-label">Name</label>
-          <input type="text" class="form-control" name="name" id=" "  > 
-          <span class="text-danger"> 
-            @error('name')
-            {{$message}}
-            @enderror
-          </span>
-        </div> --}}
-        {{-- <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-          <span class="text-danger"> 
-            @error('email')
-            {{$message}}
-            @enderror
-          </span>
-         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" name='password' id="exampleInputPassword1">
-          <span class="text-danger"> 
-            @error('password')
-            {{$message}}
-            @enderror
-          </span>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" name='confirm_password' id="exampleInputPassword1">
-          <span class="text-danger"> 
-            @error('confirm_password')
-            {{$message}}
-            @enderror
-          </span>
-        </div> --}}
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+    <div class="col-10 m-auto">
+        <h4 class="text-center">Register form</h4>
+          {{-- <form class="row g-3" action="{{url('/')}}/registeruser" method="POST"> --}}
+          <form class="row g-3" action="{{url('/')}}/registeruser" method="POST">
+           @csrf
+            <div class="col-md-6">
+                <label for="" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id=""  >
+                 
+              </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="inputEmail4"  >
+              
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" id="inputPassword4">
+               
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" name="confirm_password" id="inputPassword4">
+              
+            </div>
+            <div class="col-6">
+              <label for="inputAddress" class="form-label">country</label>
+              <input type="text" class="form-control" id="" name="country" placeholder="1234 Main St" >
+             
+            </div>
+            <div class="col-6">
+              <label for="inputAddress" class="form-label">state</label>
+              <input type="text" class="form-control" id="inputAddress" name="state" placeholder="1234 Main St"  >
+              
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St"  >
+              
+            </div>
+          
+          <div class="col-6">
+            <label for="inputAddress" class="form-label">Gender</label><br>
+            <input type="radio" name="gender" id="" value="M">Male
+            <input type="radio" name="gender" id="" value="F" >female
+            <input type="radio" name="gender" id="" value="O" >other
+            
+          </div>
+          <div class="col-6">
+            <label for="inputAddress" class="form-label">Dob</label>
+            <input type="date" name="dob" id="" class="form-control" >
+            
+          </div>
+           
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </form>
     </div>
-  </div>
+</div>
 </div>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

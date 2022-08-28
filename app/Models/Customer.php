@@ -10,4 +10,13 @@ class Customer extends Model
     use HasFactory;
     protected $table = "customer";
     protected $primaryKey = "customer_id";
+
+
+    // mutator
+    public function setNameAttribute($value){
+        $this->attributes['name']=ucwords($value);
+    }
+    public function getDobAttribute($value){
+        return date("d-M-Y",strtotime($value));
+    }
 }
