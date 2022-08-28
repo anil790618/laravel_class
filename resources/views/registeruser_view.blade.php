@@ -12,7 +12,12 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{url('/')}}">Navbar</a>
+      <a class="navbar-brand" href="{{url('/')}}">
+        @if (session()->has('user_name'))
+        {{session()->get('user-name')}}  
+      @endif
+      Guest
+      </a>
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
           aria-expanded="false" aria-label="Toggle navigation"></button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">

@@ -7,6 +7,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\userRegistration;
 use App\Models\Customer;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,22 @@ Route::get('/registeruser/edit/{id}',[userRegistration::class,'edit'])->name('cu
 Route::post('/registeruser/update/{id}',[userRegistration::class,'update'])->name('customer.update');
 Route::post('/registeruser',[userRegistration::class,'store']);
 Route::get('/registeruser/registeruser_view',[userRegistration::class,'view']);
+
+
+
+Route::get('/get-all-session',function(){
+    $session = session()->all();
+    p($session);
+});
+
+Route::get('/set-session',function(Request $request){
+$request->session()->put('user_id','123');
+$request->session()->put('user_name','AnilYadav');
+$request->session()->flash('status','success');
+return redirect('/registeruser/registeruser_view');
+});
+
+Route::get('/destroy-session',function(){
+session()->forget("user_id");
+return redirect('get-all-session');
+});
