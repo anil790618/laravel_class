@@ -62,6 +62,7 @@ Route::get('/registeruser/edit/{id}',[userRegistration::class,'edit'])->name('cu
 Route::post('/registeruser/update/{id}',[userRegistration::class,'update'])->name('customer.update');
 Route::post('/registeruser',[userRegistration::class,'store']);
 Route::get('/registeruser/registeruser_view',[userRegistration::class,'view']);
+Route::get('/registeruser/registeruser_view_trash',[userRegistration::class,'view_trash']);
 
 
 

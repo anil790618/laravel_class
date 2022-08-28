@@ -47,6 +47,11 @@ class userRegistration extends Controller
         // return view("registeruser_view");
         return view("registeruser_view")->with($data);
      }
+     public function view_trash(){
+        $customer = Customer::onlyTrashed()->get();
+        $data = compact('customer'); 
+        return view("registeruser_view_trash")->with($data);
+     }
 
      public function delete($id){
             // echo $id;

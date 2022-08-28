@@ -46,12 +46,14 @@
         {{print_r($customer)}}
     </pre> --}}
    <div class="container my-5">
+    <h1 class="text-center">Trash Data</h1>
     <div class="row">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{route('register.form')}}">
-        <button class="btn btn-primary my-2" type="button">+ Add</button></a> 
+        
+        <a href="{{url('/registeruser/registeruser_view')}}">
+          <button class="btn btn-primary my-2" type="button">back</button></a> 
         <a href="{{url('/registeruser/registeruser_view_trash')}}">
-        <button class="btn btn-danger my-2" type="button">Go to Trash</button></a> 
+          <button class="btn btn-danger my-2" type="button">Go to Trash</button></a> 
       </div>
       <div class="col-12 m-auto border">
         <table class="table table-striped table-inverse table-responsive">
@@ -81,8 +83,8 @@
                       <td>{{$customer->dob}}</td>
                       <td>
                         {{-- <a href="{{url('/registeruser/delete/')}}/{{$customer->customer_id}}"> <button class="btn btn-danger">Delete</button></a> --}}
-                        <a href="{{route('customer.delete',['id'=>$customer->customer_id])}}"> <button class="btn btn-danger">Move to Tras</button></a>
-                        <a href="{{route('customer.edit',['id'=>$customer->customer_id])}}"> <button class="btn btn-primary">Edit</button></a>
+                        <a href="{{route('customer.delete',['id'=>$customer->customer_id])}}"> <button class="btn btn-danger">Delete</button></a>
+                        <a href="{{route('customer.edit',['id'=>$customer->customer_id])}}"> <button class="btn btn-primary">Restore</button></a>
                       </td>
 
                       
