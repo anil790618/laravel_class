@@ -68,6 +68,22 @@ class userRegistration extends Controller
             // print_r($customer);
      }
 
+     public function forcedelete($id){
+        $customer = Customer::withTrashed()->find($id);
+        if(!is_null($customer)){
+            $customer->forcedelete();
+        }
+        // return redirect()->back();
+        return redirect('/registeruser/registeruser_view_trash');
+     }
+     public function restore($id){
+        $customer = Customer::withTrashed()->find($id);
+        if(!is_null($customer)){
+            $customer->restore();
+        }
+        // return redirect()->back();
+        return redirect('/registeruser/registeruser_view');
+     }
      public function edit($id){
         $customer = customer::find($id);
         if(is_null($customer)){

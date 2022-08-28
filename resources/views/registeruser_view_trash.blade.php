@@ -83,8 +83,8 @@
                       <td>{{$customer->dob}}</td>
                       <td>
                         {{-- <a href="{{url('/registeruser/delete/')}}/{{$customer->customer_id}}"> <button class="btn btn-danger">Delete</button></a> --}}
-                        <a href="{{route('customer.delete',['id'=>$customer->customer_id])}}"> <button class="btn btn-danger">Delete</button></a>
-                        <a href="{{route('customer.edit',['id'=>$customer->customer_id])}}"> <button class="btn btn-primary">Restore</button></a>
+                        <a href="{{route('customer.forcedelete',['id'=>$customer->customer_id])}}"> <button class="btn btn-danger">Delete</button></a>
+                        <a href="{{route('customer.restore',['id'=>$customer->customer_id])}}"> <button class="btn btn-primary">Restore</button></a>
                       </td>
 
                       
